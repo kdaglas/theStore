@@ -1,7 +1,8 @@
 # theStore
 
 Store manager is a web application that helps store owners manage sales and product inventory records. This application helps the store owner avoid selling products that have run out of stock.
-This app is hosted at www.theStore.com[https://www.python.org/]
+This app is hosted at:
+- [www.theStore.com](https://kdaglas.github.io/theStore/UI/index.html)
 
 ### Getting Started
 
@@ -15,7 +16,7 @@ To use git, run the code below:
 
 - Use a web browser preferrably Chrome.
 - You need to have Python3 installed on your computer. To install it go to:
-  Python [https://www.python.org/]
+  [Python](https://www.python.org/)
 
 ### Features
 
@@ -34,7 +35,7 @@ To use git, run the code below:
 ### Built With
 
 - HTML5 and CSS3
-- Python [https://www.python.org/]
+- [Python](https://www.python.org/)
 
 ### Authors
 
