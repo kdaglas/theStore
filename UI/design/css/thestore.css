@@ -1,0 +1,24 @@
+/*    ----    css for the whole app  ----   */
+@font-face{
+    font-family: myfont;
+    src: url(ABeeZee-Regular.otf);
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family:myfont;
+    color: #211d1e;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+}
+a{
+    text-decoration:none;
+    color:#F9AD20;
+    font-weight: bold;
+    transition: 0.5s;
+}
+a:hover{
+    color:#211d1e;
+    transition: 0.5s;
+}
