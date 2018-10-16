@@ -154,6 +154,23 @@ table tr:nth-child(even) td{
     color: #0080ff;
     transition: 0.5s;
 }
+.button2{
+    border: 1px solid #c21807;
+    background: #c21807;
+    border-radius:25px;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 17px;
+    outline: none;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.button2:hover{
+    background-color: transparent;
+    border: 1px solid #c21807;
+    color: #c21807;
+    transition: 0.5s;
+}
 
 
 /* --- css for some accordian --- */
