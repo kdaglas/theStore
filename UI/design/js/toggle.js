@@ -51,3 +51,22 @@ document.getElementById('water').style.display = "block";
 function salt() { 
 document.getElementById('salt').style.display = "block";
 }
+
+
+/* --- function to chhnge the tab for the attendant --- */
+function openAttendant(evt, attendantName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(attendantName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+/* --- this gives keeps one of the divs with default to always show --- */
+document.getElementById("defaultOpen").click();
