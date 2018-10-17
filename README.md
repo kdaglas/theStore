@@ -41,7 +41,7 @@ Go into the folder, create a virtual environment, activate it and then use a pip
     $ source envn/bin/activate
 
     <!-- for windows use this command-->
-    $ envn\bin\activate
+    $ envn\Scripts\activate
 
     $ pip install -r requirements.txt
 ```
