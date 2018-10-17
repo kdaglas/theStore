@@ -1,5 +1,7 @@
 # theStore
 
+[![Build Status](https://travis-ci.org/kdaglas/theStore.svg?branch=theStore-api)](https://travis-ci.org/kdaglas/theStore)
+
 Store manager is a web application that helps store owners manage sales and product inventory records. This application helps the store owner avoid selling products that have run out of stock. This app is hosted at:
 - [www.theStore.com](https://kdaglas.github.io/theStore/UI/index.html)
 
