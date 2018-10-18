@@ -50,7 +50,7 @@ Go into the folder, create a virtual environment, activate it and then use a pip
 ```
 When this is done then run the application by typing this command
 ```
-$ python run.py
+    $ python run.py
 ```
 You can use Postman to checkout the functionality of the api endpoints, you can download here:
 - [www.getpostman.com/apps](https://www.getpostman.com/apps) - Postman: An API testing tool for developers
