@@ -1,6 +1,7 @@
 # theStore
 
 [![Build Status](https://travis-ci.org/kdaglas/theStore.svg?branch=theStore-api)](https://travis-ci.org/kdaglas/theStore)
+[![Coverage Status](https://coveralls.io/repos/github/kdaglas/theStore/badge.svg?branch=theStore-api)](https://coveralls.io/github/kdaglas/theStore?branch=theStore-api)
 
 Store manager is a web application that helps store owners manage sales and product inventory records. This application helps the store owner avoid selling products that have run out of stock. This app is hosted at:
 - [www.theStore.com](https://kdaglas.github.io/theStore/UI/index.html)
@@ -13,7 +14,7 @@ The api allows the user(store attendant or store owner) to post and get data fro
 ### Prerequisites
 
 - Use a web browser preferrably Chrome.
-- You need to have Python3 installed on your computer. To install it go to (www.python.org)[https://www.python.org/]. Note: Python needs to be installed globally (not in the virtual environment)
+- You need to have Python3 installed on your computer. To install it go to [www.python.org](https://www.python.org/). Note: Python needs to be installed globally (not in the virtual environment)
 
 ### Features
 
@@ -52,7 +53,7 @@ When this is done then run the application by typing this command
 $ python run.py
 ```
 You can use Postman to checkout the functionality of the api endpoints, you can download here:
-- [www.getpostman.com/apps](https://www.getpostman.com/apps) - An API testing tool for developers
+- [www.getpostman.com/apps](https://www.getpostman.com/apps) - Postman: An API testing tool for developers
 
 
 ### Tests
@@ -72,7 +73,7 @@ Then run these commands to begin testing the API
 ### Endpoints covered.
 
  HTTP Method | End point | Action | Access
--------|-------|-------
+-------|-------|-------|-------
  POST | /api/v1/products | Create a product | only the store owner/admin
  GET | /api/v1/products | Fetch all products | both
  GET | /api/v1/products/<productId> | Fetch a single product record | both
