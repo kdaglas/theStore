@@ -29,3 +29,12 @@ def adding_product():
             return jsonify({"message":valid}), 400
     except:
         return jsonify({"message": "The key or value fields are invalid or missing, please check"}), 403
+
+
+@app.route("/api/v1/products", methods=['GET'])
+def view_all_products():
+    
+    ''' this function routes to /api/v1/products and uses the GET method to return all the products added '''
+    all_products = product.view_all_products()
+    return jsonify({'All_products': all_products,
+                    'message': 'All products viewed'}), 200
