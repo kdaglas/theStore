@@ -6,6 +6,7 @@ class MainTesting(unittest.TestCase):
 
     ''' using daummy data and passing it through the api endpoints or routes '''
     add_product = json.dumps(dict(product_name="Sugar", quantity="5", unit_price="4000", category="necessity"),)
+    add_empty_product = json.dumps(dict(product_name="", quantity="", unit_price="", category=""),)
     wrong_fields = json.dumps(dict(product="Sugar", quantity="5", unit_price="4000", category="necessity"),)
     empty_name = json.dumps(dict(product_name="", quantity="5", unit_price="4000", category="necessity"),)
     wrong_name = json.dumps(dict(product_name=" ", quantity="5", unit_price="4000", category="necessity"),)

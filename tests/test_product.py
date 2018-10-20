@@ -16,6 +16,16 @@ class TestingProducts(MainTesting):
         self.assertEqual(response.status_code, 405)
 
 
+    def test_for_method_not_allowed(self):
+
+        ''' test for method not allowed '''
+        response = self.app.post('/api/v1/products/67878', data = MainTesting.add_product,
+                                content_type="application/json")
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "Method not allowed")
+        self.assertEqual(response.status_code, 405)
+
+
     def test_for_adding_product_with_invalid_fields(self):
 
         '''test for invalid fields'''
@@ -123,4 +133,31 @@ class TestingProducts(MainTesting):
         reply = json.loads(response.data)
         self.assertEqual(reply["message"], "All products viewed")
         self.assertEqual(response.status_code, 200)
+
+
+    def test_getting_one_product_with_invalid_id(self):
+
+        ''' test for getting one product '''
+        response = self.app.get("/api/v1/products/aa", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "Input should be an interger")
+        self.assertEqual(response.status_code, 400)
+
+
+    def test_getting_one_product_with_wrong_id(self):
+
+        ''' test for getting one product '''
+        response = self.app.get("/api/v1/products/034566778899", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "No product found with that id")
+        self.assertEqual(response.status_code, 404)
+
+
+    # def test_getting_one_product(self):
+
+    #     ''' test for getting one product '''
+    #     response = self.app.get("/api/v1/products/23454", content_type='application/json')
+    #     reply = json.loads(response.data)
+    #     self.assertEqual(reply["message"], "One product viewed")
+    #     self.assertEqual(response.status_code, 200)
     
