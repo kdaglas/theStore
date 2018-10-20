@@ -146,13 +146,13 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 201)
 
 
-    def test_getting_all_sale_records(self):
+    # def test_getting_all_sale_records(self):
 
-        ''' test for getting all sales records '''
-        response = self.app.get("/api/v1/sales", content_type='application/json')
-        reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "All sale records viewed")
-        self.assertEqual(response.status_code, 200)
+    #     ''' test for getting all sales records '''
+    #     response = self.app.get("/api/v1/sales", content_type='application/json')
+    #     reply = json.loads(response.data)
+    #     self.assertEqual(reply["message"], "All sale records viewed")
+    #     self.assertEqual(response.status_code, 200)
 
 
     # def test_getting_one_product_with_invalid_id(self):
