@@ -9,20 +9,24 @@ class Validator():
         ''' method to validate the data of the product from the store owner input '''
         if product_name == '':
             return "Product name is missing"
-        elif not re.search(r"^([a-zA-Z\S]+\s)*[a-zA-Z\S]+$", product_name):
-            return "Product should be either one or two words and in characters"
+        elif not re.search(r"^([a-zA-Z\S]+\s)*[a-zA-Z\S]{5,}$", product_name):
+            return "Product name should be one word with more than 5 characters or two words and be in characters"
         elif unit_price == '':
-            return "Price is missing"
-        elif not re.search(r"^[0-9]+$", unit_price):
-            return "The price should be in numbers"
+            return "Unit_price is missing"
+        elif int(unit_price) < 1:
+            return "Unit_price should be more than 0"
+        elif not re.search(r"^[0-9]{3,}$", unit_price):
+            return "Unit_price should have no spaces, be 3 or more integers and be in numbers"
         elif quantity == '':
             return "Quantity is missing"
+        elif int(quantity) < 1:
+            return "Quantity should be more than 0"
         elif not re.search(r"^[0-9]+$", quantity):
-            return "Quantity should be in numbers"
+            return "Quantity should have no spaces and be in numbers"
         elif category == '':
             return "Category is missing"
-        elif not re.search(r"^[a-zA-Z]+$", category):
-            return "Category should be in characters"
+        elif not re.search(r"^[a-zA-Z]{5,}$", category):
+            return "Category should be 5 or more characters and be in characters"
         else:
             return True
 
@@ -33,3 +37,31 @@ class Validator():
             _input = int(input)
         except ValueError:
             return "Input should be an interger"
+
+
+    @classmethod
+    def validate_sale_record_inputs(cls, product_name, quantity, pay_amount, attendant):
+
+        ''' method to validate the data of the product from the store owner input '''
+        if product_name == '':
+            return "Product name is missing"
+        elif not re.search(r"^([a-zA-Z\S\D]+\s)*[a-zA-Z\S\D]{5,}$", product_name):
+            return "Product should be either one word with more than 5 characters or two words and in characters"
+        elif quantity == '':
+            return "Quantity is missing"
+        elif int(quantity) < 1:
+            return "Quantity should be more than 0"
+        elif not re.search(r"^[0-9]+$", quantity):
+            return "Quantity should have no spaces and be in numbers"
+        elif pay_amount == '':
+            return "The amount paid is missing"
+        elif int(pay_amount) < 1:
+            return "The amount paid should be more than 0"
+        elif not re.search(r"^[0-9]{3,}$", pay_amount):
+            return "The amount paid should have no spaces and be in numbers"
+        elif attendant == '':
+            return "Attendant name is missing"
+        elif not re.search(r"^[a-zA-Z]{3,}$", attendant):
+            return "Attendant name should be more than 3 characters and be in characters"
+        else:
+            return True
