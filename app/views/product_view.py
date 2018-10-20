@@ -32,9 +32,26 @@ def adding_product():
 
 
 @app.route("/api/v1/products", methods=['GET'])
-def view_all_products():
+def view_all_the_products():
     
     ''' this function routes to /api/v1/products and uses the GET method to return all the products added '''
-    all_products = product.view_all_products()
-    return jsonify({'All_products': all_products,
-                    'message': 'All products viewed'}), 200
+    all_products = product.view_all_the_products()
+    if all_products:
+        return jsonify({'All_products': all_products,
+                        'message': 'All products viewed'}), 200
+    return jsonify({'message': 'No product found'}), 404
+
+
+@app.route("/api/v1/products/<productId>", methods=["GET"])
+def view_a_single_product(productId):
+    
+    ''' this function routes to /api/v1/products/<productId> and uses the GET method to return one product added '''
+    valid = Validator.validate_input_type(productId)
+    if valid:
+        return jsonify({"message":valid}), 400
+    one_product = product.view_one_product(productId)
+    if one_product:
+        return jsonify({"Your product": one_product,
+                        'message': 'One product viewed'}), 200
+    return jsonify({'message': 'No product found with that id'}), 404
+        
