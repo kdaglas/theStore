@@ -25,3 +25,11 @@ class Validator():
             return "Category should be in characters"
         else:
             return True
+
+
+    @classmethod
+    def validate_input_type(cls, input):
+        try:
+            _input = int(input)
+        except ValueError:
+            return "Input should be an interger"
