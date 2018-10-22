@@ -5,19 +5,18 @@ function Check(){
   if(username==='user' && password ==="user"){
     window.location.href ="homepage.html";
   }else if(username==='admin' && password ==="admin"){
-    var username = document.querySelector("#username").value;
-    var password = document.querySelector("#password").value;
     window.location.href ="admin.html";
   }else{
+    alert('invalid information')
   }
 }
 
 
 /* --- function to hide and reveal the categories --- */
-var acc = document.getElementsByClassName("cat-items");
+var categories = document.getElementsByClassName("cat-items");
 var i;
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+for (i = 0; i < categories.length; i++) {
+  categories[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight){
@@ -53,7 +52,7 @@ document.getElementById('salt').style.display = "block";
 }
 
 
-/* --- function to chhnge the tab for the attendant --- */
+/* --- function to change the tab for the attendants --- */
 function openAttendant(evt, attendantName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -68,11 +67,11 @@ function openAttendant(evt, attendantName) {
   evt.currentTarget.className += " active";
 }
 
-/* --- this gives keeps one of the divs with default to always show --- */
+/* --- this gives a default to one of the divs to alwyas show on loading --- */
 document.getElementById("defaultOpen").click();
 
 
-/* --- function to chhnge the tab for the adding buttons --- */
+/* --- function to change the tab for the adding buttons --- */
 function openAction(evt, actionName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -87,5 +86,5 @@ function openAction(evt, actionName) {
   evt.currentTarget.className += " active";
 }
 
-/* --- this gives keeps one of the divs with default to always show --- */
+/* --- this gives a default to one of the divs to alwyas show on loading  --- */
 document.getElementById("defaultOpen").click();
