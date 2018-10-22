@@ -9,7 +9,7 @@ class Validator():
         ''' method to validate the data of the product from the store owner input '''
         if product_name == '':
             return "Product name is missing"
-        elif not re.search(r"^([a-zA-Z\S]+\s)*[a-zA-Z\S]{5,}$", product_name):
+        elif not re.search(r"^([a-zA-Z]{5,}\s)?[a-zA-Z]{5,}$", product_name):
             return "Product name should be one word with more than 5 characters or two words and be in characters"
         elif unit_price == '':
             return "Unit_price is missing"
@@ -45,7 +45,7 @@ class Validator():
         ''' method to validate the data of the product from the store owner input '''
         if product_name == '':
             return "Product name is missing"
-        elif not re.search(r"^([a-zA-Z\S\D]+\s)*[a-zA-Z\S\D]{5,}$", product_name):
+        elif not re.search(r"^([a-zA-Z]{5,}\s)?[a-zA-Z]{5,}$", product_name):
             return "Product should be either one word with more than 5 characters or two words and in characters"
         elif quantity == '':
             return "Quantity is missing"
