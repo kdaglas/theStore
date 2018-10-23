@@ -160,7 +160,7 @@ class TestingProducts(MainTesting):
         ''' test for getting one product '''
         response = self.app.get("/api/v1/products/aa", content_type='application/json')
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Input should be an interger")
+        self.assertEqual(reply["message"], "Input should be an integer")
         self.assertEqual(response.status_code, 400)
 
 
