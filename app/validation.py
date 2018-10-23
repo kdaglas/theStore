@@ -36,7 +36,7 @@ class Validator():
         try:
             _input = int(input)
         except ValueError:
-            return "Input should be an interger"
+            return "Input should be an integer"
 
 
     @classmethod
