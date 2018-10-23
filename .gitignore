@@ -1,5 +1,5 @@
-myenv/
-__pycache__/
 .vscode/
+__pycache__/
+myenv/
 .pytest_cache/
 /__pycache__

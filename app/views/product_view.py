@@ -22,6 +22,9 @@ def adding_product():
         category = data.get('category')
         valid = Validator.validate_product_inputs(data['product_name'], data['unit_price'], data['quantity'], data['category'])
         if valid == True:
+            similar_product = product.same_product(product_name)
+            if similar_product:
+                return jsonify({'message': 'Product already exists'}), 400
             added_product = product.add_product(productId, product_name, unit_price, quantity, category)
             return jsonify({'Added_product': added_product,
                             'message': 'Product has been added'}), 201
@@ -51,7 +54,7 @@ def view_a_single_product(productId):
         return jsonify({"message":valid}), 400
     one_product = product.view_one_product(productId)
     if one_product:
-        return jsonify({"Your product": one_product,
+        return jsonify({"Your_product": one_product,
                         'message': 'One product viewed'}), 200
     return jsonify({'message': 'No product found with that id'}), 404
         

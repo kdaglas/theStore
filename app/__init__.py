@@ -18,4 +18,4 @@ def method_not_allowed(e):
         returning a message incase of a method not allowed '''
     return jsonify({"message": "Method not allowed"}), 405
 
-from app.views import product_view
+from app.views import product_view, sales_view

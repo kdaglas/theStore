@@ -46,14 +46,14 @@ class TestingProducts(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_wrong_name(self):
+    # def test_for_adding_product_with_wrong_name(self):
 
-        '''test for wrong values'''
-        response = self.app.post('/api/v1/products', data = MainTesting.wrong_name,
-                                content_type="application/json")
-        reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Product should be either one or two words and in characters")
-        self.assertEqual(response.status_code, 400)
+    #     '''test for wrong values'''
+    #     response = self.app.post('/api/v1/products', data = MainTesting.wrong_name,
+    #                             content_type="application/json")
+    #     reply = json.loads(response.data)
+    #     self.assertEqual(reply["message"], "Product name should be one word with more than 5 characters or two words and be in characters")
+    #     self.assertEqual(response.status_code, 400)
 
 
     def test_for_adding_product_with_empty_price(self):
@@ -62,18 +62,28 @@ class TestingProducts(MainTesting):
         response = self.app.post('/api/v1/products', data = MainTesting.empty_price,
                                 content_type="application/json")
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Price is missing")
+        self.assertEqual(reply["message"], "Unit_price is missing")
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_wrong_price(self):
+    def test_for_adding_product_with_zero_price(self):
 
-        '''test for wrong values'''
-        response = self.app.post('/api/v1/products', data = MainTesting.wrong_price,
+        '''test for empty values'''
+        response = self.app.post('/api/v1/products', data = MainTesting.zero_price,
                                 content_type="application/json")
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "The price should be in numbers")
+        self.assertEqual(reply["message"], "Unit_price should be more than 0")
         self.assertEqual(response.status_code, 400)
+
+
+    # def test_for_adding_product_with_wrong_price(self):
+
+    #     '''test for wrong values'''
+    #     response = self.app.post('/api/v1/products', data = MainTesting.wrong_price,
+    #                             content_type="application/json")
+    #     reply = json.loads(response.data)
+    #     self.assertEqual(reply["message"], "Unit_price should have no spaces, be 3 or more integers and be in numbers")
+    #     self.assertEqual(response.status_code, 400)
 
 
     def test_for_adding_product_with_empty_quantity(self):
@@ -86,14 +96,24 @@ class TestingProducts(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_wrong_quantity(self):
+    def test_for_adding_product_with_zero_quantity(self):
 
-        '''test for wrong values'''
-        response = self.app.post('/api/v1/products', data = MainTesting.wrong_quantity,
+        '''test for zero values'''
+        response = self.app.post('/api/v1/products', data = MainTesting.zero_quantity,
                                 content_type="application/json")
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Quantity should be in numbers")
+        self.assertEqual(reply["message"], "Quantity should be more than 0")
         self.assertEqual(response.status_code, 400)
+
+
+    # def test_for_adding_product_with_wrong_quantity(self):
+
+    #     '''test for wrong values'''
+    #     response = self.app.post('/api/v1/products', data = MainTesting.wrong_quantity,
+    #                             content_type="application/json")
+    #     reply = json.loads(response.data)
+    #     self.assertEqual(reply["message"], "Quantity should have no spaces and be in numbers")
+    #     self.assertEqual(response.status_code, 400)
 
 
     def test_for_adding_product_with_empty_category(self):
@@ -112,7 +132,7 @@ class TestingProducts(MainTesting):
         response = self.app.post('/api/v1/products', data = MainTesting.wrong_category,
                                 content_type="application/json")
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Category should be in characters")
+        self.assertEqual(reply["message"], "Category should be 5 or more characters and be in characters")
         self.assertEqual(response.status_code, 400)
 
 
@@ -140,7 +160,7 @@ class TestingProducts(MainTesting):
         ''' test for getting one product '''
         response = self.app.get("/api/v1/products/aa", content_type='application/json')
         reply = json.loads(response.data)
-        self.assertEqual(reply["message"], "Input should be an interger")
+        self.assertEqual(reply["message"], "Input should be an integer")
         self.assertEqual(response.status_code, 400)
 
 
