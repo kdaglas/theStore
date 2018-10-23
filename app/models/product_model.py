@@ -47,3 +47,12 @@ class Product():
                 return False
             return False
         return False
+
+
+    def same_product(self, product_name):
+
+        ''' this method returns product in the list by its name'''
+        for product in self.the_products:
+            if product.get('product_name') == product_name:
+                return True
+        return False
