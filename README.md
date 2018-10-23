@@ -9,7 +9,7 @@ Store manager is a web application that helps store owners manage sales and prod
 ## theStore-api
 
 The api allows the user(store attendant or store owner) to post and get data from the app through API end points that are creating a connection of the client with the database(datastructures). API is being hosted by heroku at: 
-- [www.theStore-api.com](https://douglas-thedtore.herokuapp.com/api/v1/products)
+- [www.theStore-api.com](https://douglas-thestore.herokuapp.com)
 
 ### Prerequisites
 
