@@ -8,12 +8,12 @@ class Product():
         self.the_products = []
 
     
-    def add_product(self, productId, product_name, unit_price, quantity, category):
+    def add_product(self, product_name, unit_price, quantity, category):
 
         ''' the add product method converts the data to a dictionary and then 
             returns that format of the product class '''
         product = {
-            'productId' : productId,
+            'productId': len(self.the_products) + 1,
             'product_name' : product_name,
             'unit_price' : unit_price,
             'quantity' : quantity,

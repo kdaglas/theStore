@@ -8,12 +8,12 @@ class SaleRecord():
         self.the_records = []
     
 
-    def create_record(self, recordId, product_name, quantity, pay_amount, attendant, today):
+    def create_record(self, product_name, quantity, pay_amount, attendant, today):
 
         ''' the create record method converts the data to a dictionary and then 
             returns that format of the record class '''
         record = {
-            'recordId' : recordId,
+            'recordId': len(self.the_records) + 1,
             'product_name' : product_name,
             'quantity': quantity,
             'pay_amount': pay_amount,

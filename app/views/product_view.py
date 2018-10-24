@@ -15,7 +15,6 @@ def adding_product():
         from the owner which is the product and its arguments and posts the data returning the product made. '''
     try:
         data = request.get_json()
-        productId = int(str(uuid.uuid1().int)[:5])
         product_name = data.get('product_name')
         unit_price = data.get('unit_price')
         quantity = data.get('quantity')
@@ -25,7 +24,7 @@ def adding_product():
             similar_product = product.same_product(product_name)
             if similar_product:
                 return jsonify({'message': 'Product already exists'}), 400
-            added_product = product.add_product(productId, product_name, unit_price, quantity, category)
+            added_product = product.add_product(product_name, unit_price, quantity, category)
             return jsonify({'Added_product': added_product,
                             'message': 'Product has been added'}), 201
         else:

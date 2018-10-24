@@ -16,7 +16,6 @@ def creating_sale_record():
         from the attendant which is the sale record and its arguments and posts the data returning the record created. '''
     try:
         data = request.get_json()
-        recordId = int(str(uuid.uuid1().int)[:5])
         product_name = data.get('product_name')
         quantity = data.get('quantity')
         pay_amount = data.get('pay_amount')
@@ -24,7 +23,7 @@ def creating_sale_record():
         today = datetime.now().strftime("%H:%M:%S %Y-%m-%d")
         valid = Validator.validate_sale_record_inputs(data['product_name'], data['quantity'], data['pay_amount'], data['attendant'])
         if valid == True:
-            created_record = record.create_record(recordId, product_name, quantity, pay_amount, attendant, today)
+            created_record = record.create_record(product_name, quantity, pay_amount, attendant, today)
             return jsonify({'Created_record': created_record,
                             'message': 'Sale record has been created'}), 201
         else:

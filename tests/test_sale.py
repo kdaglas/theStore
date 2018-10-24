@@ -176,7 +176,7 @@ class TestingSales(MainTesting):
     # def test_getting_one_sale_record(self):
 
     #     ''' test for getting one product '''
-    #     response = self.app.get("/api/v1/sales/23454", content_type='application/json')
+    #     response = self.app.get("/api/v1/sales/1", content_type='application/json')
     #     reply = json.loads(response.data)
     #     self.assertEqual(reply["message"], "One sale record viewed")
     #     self.assertEqual(response.status_code, 200)

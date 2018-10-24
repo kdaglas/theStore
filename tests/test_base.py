@@ -19,7 +19,7 @@ class MainTesting(unittest.TestCase):
     wrong_category= json.dumps(dict(product_name="Sugar", quantity="5", unit_price="4000", category="basi55c"),)
     add_product = json.dumps(dict(product_name="Sugar", quantity="5", unit_price="4000", category="necessity"),)
 
-    wrong_sale_fields = json.dumps(dict(product="", quantity="5", pay_amount="4000", attendant="douglas"),)
+    wrong_sale_fields = json.dumps(dict(product="Sugar", quantity="5", pay_amount="4000", attendant="douglas"),)
     empty_product_name = json.dumps(dict(product_name="", quantity="5", pay_amount="4000", attendant="douglas"),)
     wrong_product_name = json.dumps(dict(product_name=" ", quantity="5", pay_amount="4000", attendant="douglas"),)
     empty_amount = json.dumps(dict(product_name="Sugar", quantity="5", pay_amount="", attendant="douglas"),)
