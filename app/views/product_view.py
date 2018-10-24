@@ -56,4 +56,3 @@ def view_a_single_product(productId):
         return jsonify({"Your_product": one_product,
                         'message': 'One product viewed'}), 200
     return jsonify({'message': 'No product found with that id'}), 404
-        

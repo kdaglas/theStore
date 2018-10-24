@@ -16,14 +16,14 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 405)
 
 
-    # def test_for_method_not_allowed(self):
+    def test_for_method_not_allowed(self):
 
-    #     ''' test for method not allowed '''
-    #     response = self.app.post('/api/v1/sales/67878', data = MainTesting.create_sale,
-    #                             content_type="application/json")
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "Method not allowed")
-    #     self.assertEqual(response.status_code, 405)
+        ''' test for method not allowed '''
+        response = self.app.post('/api/v1/sales/67878', data = MainTesting.create_sale,
+                                content_type="application/json")
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "Method not allowed")
+        self.assertEqual(response.status_code, 405)
 
 
     def test_for_create_a_record_with_invalid_fields(self):
@@ -76,16 +76,6 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    # def test_for_create_a_record_with_wrong_amount(self):
-
-    #     '''test for wrong values'''
-    #     response = self.app.post('/api/v1/sales', data = MainTesting.wrong_amount,
-    #                             content_type="application/json")
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "The amount paid should have no spaces and be in numbers")
-    #     self.assertEqual(response.status_code, 400)
-
-
     def test_for_create_a_record_with_empty_quantity(self):
 
         '''test for empty values'''
@@ -104,16 +94,6 @@ class TestingSales(MainTesting):
         reply = json.loads(response.data)
         self.assertEqual(reply["message"], "Quantity should be more than 0")
         self.assertEqual(response.status_code, 400)
-
-
-    # def test_for_create_a_record_with_wrong_quantity(self):
-
-    #     '''test for wrong values'''
-    #     response = self.app.post('/api/v1/sales', data = MainTesting.wrong_sale_quantity,
-    #                             content_type="application/json")
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "Quantity should have no spaces and be in numbers")
-    #     self.assertEqual(response.status_code, 400)
 
 
     def test_for_create_a_record_with_empty_attendant(self):
@@ -173,11 +153,11 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 404)
 
 
-    # def test_getting_one_sale_record(self):
+    def test_getting_one_sale_record(self):
 
-    #     ''' test for getting one product '''
-    #     response = self.app.get("/api/v1/sales/1", content_type='application/json')
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "One sale record viewed")
-    #     self.assertEqual(response.status_code, 200)
+        ''' test for getting one product '''
+        response = self.app.get("/api/v1/sales/1", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "One sale record viewed")
+        self.assertEqual(response.status_code, 200)
     
