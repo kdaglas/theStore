@@ -31,4 +31,15 @@ def creating_sale_record():
             return jsonify({"message":valid}), 400
     except:
         return jsonify({"message": "The key or value fields are invalid or missing, please check"}), 403
+
+
+@app.route("/api/v1/sales", methods=['GET'])
+def fetch_all_the_sales():
+    
+    ''' this function routes to /api/v1/sales and uses the GET method to return all the sale records created '''
+    all_sales = record.fetch_all_the_sales()
+    if all_sales:
+        return jsonify({'All_sales': all_sales,
+                        'message': 'All sale records viewed'}), 200
+    return jsonify({'message': 'No sale record found'}), 404
         
