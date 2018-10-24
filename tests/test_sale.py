@@ -155,22 +155,22 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 200)
 
 
-    # def test_getting_one_sale_record_with_invalid_id(self):
+    def test_getting_one_sale_record_with_invalid_id(self):
 
-    #     ''' test for getting one product '''
-    #     response = self.app.get("/api/v1/sales/aa", content_type='application/json')
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "Input should be an interger")
-    #     self.assertEqual(response.status_code, 400)
+        ''' test for getting one sale record '''
+        response = self.app.get("/api/v1/sales/aa", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "Input should be an integer")
+        self.assertEqual(response.status_code, 400)
 
 
-    # def test_getting_one_sale_record_with_wrong_id(self):
+    def test_getting_one_sale_record_with_wrong_id(self):
 
-    #     ''' test for getting one product '''
-    #     response = self.app.get("/api/v1/sales/034566778899", content_type='application/json')
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "No product found with that id")
-    #     self.assertEqual(response.status_code, 404)
+        ''' test for getting one product '''
+        response = self.app.get("/api/v1/sales/034566778899", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "No sale record found with that id")
+        self.assertEqual(response.status_code, 404)
 
 
     # def test_getting_one_sale_record(self):
@@ -178,6 +178,6 @@ class TestingSales(MainTesting):
     #     ''' test for getting one product '''
     #     response = self.app.get("/api/v1/sales/23454", content_type='application/json')
     #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "One product viewed")
+    #     self.assertEqual(reply["message"], "One sale record viewed")
     #     self.assertEqual(response.status_code, 200)
     
