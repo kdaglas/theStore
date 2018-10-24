@@ -126,6 +126,18 @@ class TestingProducts(MainTesting):
         self.assertEqual(response.status_code, 201)
 
 
+    def test_add_same_product(self):
+
+        ''' test for adding a product '''
+        response = self.app.post("/api/v1/products", data = MainTesting.add_product, 
+                                content_type='application/json')
+        resp = self.app.post("/api/v1/products", data = MainTesting.add_product, 
+                                content_type='application/json')
+        reply = json.loads(resp.data)
+        self.assertEqual(reply["message"], "Product already exists")
+        self.assertEqual(resp.status_code, 400)
+
+
     def test_getting_all_products(self):
 
         ''' test for getting all products '''

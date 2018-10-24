@@ -4,7 +4,7 @@ class SaleRecord():
     def __init__(self):
 
         ''' contructor to initialise the sale record list that 
-            contains all the attributes of that sale '''
+            contains all the attributes of that sale record '''
         self.the_records = []
     
 
