@@ -3,4 +3,3 @@ __pycache__/
 myenv/
 .pytest_cache/
 /__pycache__
-tests/red_for_tes.py
