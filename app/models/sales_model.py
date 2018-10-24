@@ -22,3 +22,11 @@ class SaleRecord():
         }
         self.the_records.append(record)
         return record
+
+
+    def fetch_all_the_sales(self):
+
+        ''' this method returns all the created sale records in the list '''
+        if len(self.the_records) > 0:
+            return self.the_records
+        return False
