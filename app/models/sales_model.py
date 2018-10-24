@@ -30,3 +30,16 @@ class SaleRecord():
         if len(self.the_records) > 0:
             return self.the_records
         return False
+
+
+    def fetch_one_sale_record(self, recordId):
+
+        ''' this method returns one created sale record in the list '''
+        if int(recordId) > 0:
+            if len(self.the_records) > 0:
+                for record in self.the_records:
+                    if record.get('recordId') == int(recordId):
+                        return record
+                return False
+            return False
+        return False

@@ -34,7 +34,7 @@ def creating_sale_record():
 
 
 @app.route("/api/v1/sales", methods=['GET'])
-def fetch_all_the_sales():
+def fetch_all_the_sale_records():
     
     ''' this function routes to /api/v1/sales and uses the GET method to return all the sale records created '''
     all_sales = record.fetch_all_the_sales()
@@ -42,4 +42,18 @@ def fetch_all_the_sales():
         return jsonify({'All_sales': all_sales,
                         'message': 'All sale records viewed'}), 200
     return jsonify({'message': 'No sale record found'}), 404
+
+
+@app.route("/api/v1/sales/<recordId>", methods=["GET"])
+def fetch_a_single_sale_record(recordId):
+    
+    ''' this function routes to /api/v1/sales/<recordId> and uses the GET method to return one created sale record '''
+    valid = Validator.validate_input_type(recordId)
+    if valid:
+        return jsonify({"message":valid}), 400
+    one_sale_record = record.fetch_one_sale_record(recordId)
+    if one_sale_record:
+        return jsonify({"Your_sale_record": one_sale_record,
+                        'message': 'One sale record viewed'}), 200
+    return jsonify({'message': 'No sale record found with that id'}), 404
         

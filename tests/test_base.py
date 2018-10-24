@@ -31,6 +31,7 @@ class MainTesting(unittest.TestCase):
     empty_attendant = json.dumps(dict(product_name="Sugar", quantity="5", pay_amount="4000", attendant=""),)
     wrong_attendant= json.dumps(dict(product_name="Sugar", quantity="5", pay_amount="4000", attendant="doug678las"),)
     create_sale = json.dumps(dict(product_name="Sugar", quantity="5", pay_amount="4000", attendant="douglas"),)
+    create_sale_record = json.dumps(dict(recordId="23454", product_name="Sugar", quantity="5", pay_amount="4000", attendant="douglas"),)
 
 
     def setUp(self):
