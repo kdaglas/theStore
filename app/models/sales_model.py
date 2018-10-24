@@ -12,19 +12,13 @@ class SaleRecord():
 
         ''' the create record method converts the data to a dictionary and then 
             returns that format of the record class '''
-        self.recordId = recordId
-        self.product_name = product_name
-        self.quantity = quantity
-        self.pay_amount = pay_amount
-        self.attendant = attendant
-        self.today = today
         record = {
-            'recordId' : self.recordId,
-            'product_name' : self.product_name,
-            'quantity': self.quantity,
-            'pay_amount': self.pay_amount,
-            'attendant' : self.attendant,
-            'today' : self.today
+            'recordId' : recordId,
+            'product_name' : product_name,
+            'quantity': quantity,
+            'pay_amount': pay_amount,
+            'attendant' : attendant,
+            'today' : today
         }
         self.the_records.append(record)
         return record
