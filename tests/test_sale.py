@@ -26,7 +26,7 @@ class TestingSales(MainTesting):
     #     self.assertEqual(response.status_code, 405)
 
 
-    def test_for_adding_product_with_invalid_fields(self):
+    def test_for_create_a_record_with_invalid_fields(self):
 
         '''test for invalid fields'''
         response = self.app.post('/api/v1/sales', data = MainTesting.wrong_sale_fields,
@@ -36,7 +36,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 403)
 
 
-    def test_for_adding_product_with_empty_product_name(self):
+    def test_for_create_a_record_with_empty_product_name(self):
 
         '''test for empty values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.empty_product_name,
@@ -46,7 +46,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_wrong_product_name(self):
+    def test_for_create_a_record_with_wrong_product_name(self):
 
         '''test for wrong values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.wrong_product_name,
@@ -56,7 +56,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_empty_amount(self):
+    def test_for_create_a_record_with_empty_amount(self):
 
         '''test for empty values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.empty_amount,
@@ -66,7 +66,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_zero_amount(self):
+    def test_for_create_a_record_with_zero_amount(self):
 
         '''test for empty values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.zero_amount,
@@ -76,7 +76,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    # def test_for_adding_product_with_wrong_amount(self):
+    # def test_for_create_a_record_with_wrong_amount(self):
 
     #     '''test for wrong values'''
     #     response = self.app.post('/api/v1/sales', data = MainTesting.wrong_amount,
@@ -86,7 +86,7 @@ class TestingSales(MainTesting):
     #     self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_empty_quantity(self):
+    def test_for_create_a_record_with_empty_quantity(self):
 
         '''test for empty values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.empty_sale_quantity,
@@ -96,7 +96,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_zero_quantity(self):
+    def test_for_create_a_record_with_zero_quantity(self):
 
         '''test for zero values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.zero_sale_quantity,
@@ -106,7 +106,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    # def test_for_adding_product_with_wrong_quantity(self):
+    # def test_for_create_a_record_with_wrong_quantity(self):
 
     #     '''test for wrong values'''
     #     response = self.app.post('/api/v1/sales', data = MainTesting.wrong_sale_quantity,
@@ -116,7 +116,7 @@ class TestingSales(MainTesting):
     #     self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_empty_attendant(self):
+    def test_for_create_a_record_with_empty_attendant(self):
 
         '''test for empty values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.empty_attendant,
@@ -126,7 +126,7 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 400)
 
 
-    def test_for_adding_product_with_wrong_attendant(self):
+    def test_for_create_a_record_with_wrong_attendant(self):
 
         '''test for wrong values'''
         response = self.app.post('/api/v1/sales', data = MainTesting.wrong_attendant,
@@ -146,16 +146,16 @@ class TestingSales(MainTesting):
         self.assertEqual(response.status_code, 201)
 
 
-    # def test_getting_all_sale_records(self):
+    def test_getting_all_sale_records(self):
 
-    #     ''' test for getting all sales records '''
-    #     response = self.app.get("/api/v1/sales", content_type='application/json')
-    #     reply = json.loads(response.data)
-    #     self.assertEqual(reply["message"], "All sale records viewed")
-    #     self.assertEqual(response.status_code, 200)
+        ''' test for getting all sales records '''
+        response = self.app.get("/api/v1/sales", content_type='application/json')
+        reply = json.loads(response.data)
+        self.assertEqual(reply["message"], "All sale records viewed")
+        self.assertEqual(response.status_code, 200)
 
 
-    # def test_getting_one_product_with_invalid_id(self):
+    # def test_getting_one_sale_record_with_invalid_id(self):
 
     #     ''' test for getting one product '''
     #     response = self.app.get("/api/v1/sales/aa", content_type='application/json')
@@ -164,7 +164,7 @@ class TestingSales(MainTesting):
     #     self.assertEqual(response.status_code, 400)
 
 
-    # def test_getting_one_product_with_wrong_id(self):
+    # def test_getting_one_sale_record_with_wrong_id(self):
 
     #     ''' test for getting one product '''
     #     response = self.app.get("/api/v1/sales/034566778899", content_type='application/json')
@@ -173,7 +173,7 @@ class TestingSales(MainTesting):
     #     self.assertEqual(response.status_code, 404)
 
 
-    # def test_getting_one_product(self):
+    # def test_getting_one_sale_record(self):
 
     #     ''' test for getting one product '''
     #     response = self.app.get("/api/v1/sales/23454", content_type='application/json')
