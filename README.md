@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kdaglas/theStore.svg?branch=theStore-api)](https://travis-ci.org/kdaglas/theStore)
 [![Coverage Status](https://coveralls.io/repos/github/kdaglas/theStore/badge.svg?branch=theStore-api)](https://coveralls.io/github/kdaglas/theStore?branch=theStore-api)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/52d9693284ec4a1080c1826bca7d01a2)](https://www.codacy.com/app/kdaglas/theStore?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kdaglas/theStore&amp;utm_campaign=Badge_Grade)
 
 Store manager is a web application that helps store owners manage sales and product inventory records. This application helps the store owner avoid selling products that have run out of stock. This app is hosted at:
 - [www.theStore.com](https://kdaglas.github.io/theStore/UI/index.html)
